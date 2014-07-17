@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Software QuickBuy Demo From CAP</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <script src="jquery-1.8.3.min.js"></script>
+        <style>
+            body {
+                background-color: #ccccff;
+            }
+            .container {
+                width: 640px;
+                margin: 2em auto 2em auto;
+                padding: 1em;
+                font-family: Verdana, Arial;
+                font-size: 18px;
+                border: solid black 2px;
+                background-color: DarkBlue;
+                color: #dddddd;
+            }
+            .content {
+                width: 100%;
+                margin: 0px;
+                padding: 0.5em;
+                background-color: DarkBlue;
+                color: #dddddd;
+            }
+            .divider-row {
+                background-color: DarkBlue;
+                color: #dddddd;
+            }
+            .item {
+                margin: 0px;
+                padding: 0em;
+                background-color: white;
+                color: black;
+                border: solid DarkBlue 2px;
+            }
+            .container td.question {
+                text-align: right;
+            }
+            .container td.response {
+                text-align:left;
+            }
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
+            .start-invisible {
+                visibility:hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                Welcome to the Software QuickBuy assistant.
+            </div>
+            <div class="content">
+                Step 1 is to choose the publisher.
+            </div>
+            <div>
+                <table class="content">
+                    <tr id = "step-1" class="item">
+                        <td>
+                            <select id="publisher-name">
+                                <option selected disabled hidden value=''>
+                                   Choose&hellip;
+                                </option>
+                                <option name="publisher" value="adbe">
+                                   Adobe
+                                </option>
+                                <option name="publisher" value="intu">
+                                    Intuit
+                                </option>
+                                <option name="publisher" value="msft">
+                                    Microsoft
+                                </option>
+                                <option name="publisher" value="orcl">
+                                    Oracle
+                                </option>
+                            </select>
+                        </td>
+                        <td class="logo-container">
+                            <img alt='Publisher' id="publisher-logo" src="publisher-choices.png" width="100" height="100"></img>
+                    </tr>
+                    <tr id="app-prompt" class="start-invisible divider-row"><td colspan="2">Okay, you want some Adobe Software. What will it be?</td></tr>
+                    <tr id = "app-choices" class="divider-row start-invisible item">
+                        <td>
+                            <select id="app-name">
+                                <option selected disabled hidden value=''>
+                                   Choose&hellip;
+                                </option>
+                                <option name="app" value="caro">
+                                   Adobe Acrobat Pro
+                                </option>
+                                <option name="app" value="adcc">
+                                   Adobe Creative Cloud
+                                </option>
+                                <option name="app" value="admp">
+                                   Adobe Meeting Place
+                                </option>
+                            </select>
+                        </td>
+                        <td class="logo-container">
+                            <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
+                    </tr>
+                    <tr id="app-prompt" class="start-invisible divider-row">
+                        <td colspan="2"
+                        </td></tr>
+                    <tr id = "app-choices" class="divider-row start-invisible item">
+                        <td>
+                            <select id="app-name">
+                            </select>
+                        </td>
+                        <td class="logo-container">
+                            <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
+                    </tr>
+            </table>
+        </div>
+    </body>
+    <footer>
+        <script>
+            // someday this information will come via an API
+            var catalog = [
+                {
+                    publisher: 'Adobe',
+                    "pub-short": 'adbe',
+                    apps: [
+                        {
+                            app: 'Adobe Creative Cloud',
+                            "app-short": 'adcc'
+                        },
+                        {
+                            app: 'Adobe Connect',
+                            "app-short": 'admp'
+                        },
+                        {
+                            app: 'Adobe Acrobat Pro',
+                            "app-short": 'caro'
+                        }
+                    ]
+                },
+                {
+                    publisher: 'Intuit',
+                    "pub-short": 'intu',
+                    apps: [
+                        {
+                            app: 'QuickBooks Online',
+                            "app-short": 'qboe'
+                        },
+                        {
+                            app: 'TurboTax',
+                            "app-short": 'ttax'
+                        },
+                        {
+                            app: 'Intuit Payroll Service',
+                            "app-short": 'pyrl'
+                        }
+                    ]
+                },
+                {
+                    publisher: 'Microsoft',
+                    "pub-short": 'msft',
+                    apps: [
+                        {
+                            app: 'Microsoft Windows',
+                            "app-short": 'wind'
+                        },
+                        {
+                            app: 'Microsoft Office',
+                            "app-short": 'offc'
+                        },
+                        {
+                            app: 'Microsoft Sharepoint',
+                            "app-short": 'shar'
+                        }
+                    ]
+                }
+            ];
+
+            $('select#publisher-name').on('change', function(ev) {
+                var publisher = {};
+                catalog.some(function(val, indx, array) {
+                    if (val["pub-short"] === ev.target.value) {
+                        publisher = val;
+                        return true;
+                    }
+                });
+                $('#app-prompt').css('visibility',
+                    'visible').html(
+                    'You picked ' + publisher.publisher +
+                    '. Now pick a product');
+                $('#app-choices').css('visibility',
+                    'visible');
+                $('img#publisher-logo').attr('src',
+                    publisher["pub-short"] + '-logo.png');
+                var optionHtml = '<option selected disabled hidden value="">' +
+                                   'Choose&hellip;';
+                publisher.apps.forEach( function(val, indx, array) {
+                    optionHtml += 
+                        '<option name="app" value="' + val["app-short"] +'">' +
+                                val.app +
+                                '</option>';
+                });
+                $('select#app-name').html(optionHtml);
+            });
+            $('select#app-name').on('change', function( ) {
+                $('#' + this.value + '-prompt').css('visibility',
+                    'visible');
+                $('#' + this.value + '-choices').css('visibility',
+                    'visible');
+                $('img#app-logo').attr('src',
+                    this.value + '-logo.png');
+            });
+            </script>
+        </footer>
+    </html>

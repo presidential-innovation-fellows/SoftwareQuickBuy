@@ -1,0 +1,6 @@
+*.tmp
+junk.*
+*.junk
+foo.*
+*.foo
+.DS_Store
