@@ -1,110 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
 
-    <title>QuickBuy for Software</title>
+        <title>QuickBuy for Software</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/swQuickBuy.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/swQuickBuy.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <!-- link href="starter-template.css" rel="stylesheet" -->
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <!-- script src="js/ie-emulation-modes-warning.js"></script -->
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- script src="js/ie10-viewport-bug-workaround.js"></script -->
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-        <div class="container">
-            <div class="content">
-                Welcome to the Software QuickBuy assistant.
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <div class="container">
+         <div class="page-header">
+            <h1>Welcome to QuickBuy<br /><small>Acquire Software via ELA Quickly and Easily</small><h1>
+         </div>
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Your progress</h3>
             </div>
-            <div class="content">
-                Step 1 is to choose the publisher.
+            <div class="panel-body">
+               <div class="progress">
+                  <div id="total-progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                     <span class="sr-only">0% Complete</span>
+                  </div>
+               </div>
             </div>
-            <div>
-                <table class="content">
-                    <tr id = "step-1" class="item">
-                        <td>
-                            <select id="publisher-name">
-                                <option selected disabled hidden value=''>
-                                   Choose&hellip;
-                                </option>
-                                <option name="publisher" value="adbe">
-                                   Adobe
-                                </option>
-                                <option name="publisher" value="intu">
-                                    Intuit
-                                </option>
-                                <option name="publisher" value="msft">
-                                    Microsoft
-                                </option>
-                                <option name="publisher" value="orcl">
-                                    Oracle
-                                </option>
-                            </select>
-                        </td>
-                        <td class="logo-container">
-                            <img alt='Publisher' id="publisher-logo" src="publisher-choices.png" width="100" height="100"></img>
-                    </tr>
-                    <tr id="app-prompt" class="start-invisible divider-row"><td colspan="2">Okay, you want some Adobe Software. What will it be?</td></tr>
-                    <tr id = "app-choices" class="divider-row start-invisible item">
-                        <td>
-                            <select id="app-name">
-                                <option selected disabled hidden value=''>
-                                   Choose&hellip;
-                                </option>
-                                <option name="app" value="caro">
-                                   Adobe Acrobat Pro
-                                </option>
-                                <option name="app" value="adcc">
-                                   Adobe Creative Cloud
-                                </option>
-                                <option name="app" value="admp">
-                                   Adobe Meeting Place
-                                </option>
-                            </select>
-                        </td>
-                        <td class="logo-container">
-                            <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
-                    </tr>
-                    <tr id="veh-prompt" class="start-invisible divider-row">
-                        <td colspan="2"
-                        </td></tr>
-                    <tr id = "veh-choices" class="divider-row start-invisible item">
-                        <td>
-                            <select id="veh-name">
-                            </select>
-                        </td>
-                        <td class="logo-container">
-                            <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
-                    </tr>
-            </table>
-        </div>
+         </div>
+         <div class="panel row">
+               <div class="well col-md-6 col-sm-12">
+                  I know my needs. Show me my choices.
+                  <div class="row">
+                     <div class="col-md-6 col-sm-12">
+                        <select id="app-type-name">
+                           <option selected disabled hidden value=''>
+                              Choose&hellip;
+                           </option>
+                           <option name="app-type" value="prod">
+                              Office Productivity
+                           </option>
+                           <option name="app-type" value="visu">
+                              Visualization
+                           </option>
+                           <option name="app-type" value="grph">
+                              Graphics and Media
+                           </option>
+                           <option name="app-type" value="anal">
+                              Business Analytics
+                           </option>
+                           <option name="app-type" value="rdbs">
+                              Relational Database
+                           </option>
+                           </select>
+                        </div> <!-- col-md-6 col-sm-12 -->
+                        <div class="col-md-6 col-sm-12">
+                           <img alt='Publisher' id="publisher-logo" src="publisher-choices.png" width="100" height="100"></img>
+                        </div> <!-- col-md-6 col-sm-12 -->
+                     </div> <!-- row -->
+                  </div> <!-- col-md-6 col-sm-12 -->
+               <div class="well col-md-6 col-sm-12">
+                     I have done my research, I am ready to select a publisher.
+                  <div class="row">
+                     <div class="col-md-6 col-sm-12">
+                        <select id="publisher-name">
+                           <option selected disabled hidden value=''>
+                              Choose&hellip;
+                           </option>
+                           <option name="publisher" value="adbe">
+                              Adobe
+                           </option>
+                           <option name="publisher" value="intu">
+                              Intuit
+                           </option>
+                           <option name="publisher" value="msft">
+                              Microsoft
+                           </option>
+                           <option name="publisher" value="orcl">
+                              Oracle
+                           </option>
+                           </select>
+                        </div> <!-- col-md-6 col-sm-12 -->
+                        <div class="col-md-6 col-sm-12">
+                           <img alt='Publisher' id="publisher-logo" src="publisher-choices.png" width="100" height="100"></img>
+                        </div> <!-- col-md-6 col-sm-12 -->
+                     </div> <!-- row -->
+                  </div> <!-- col-md-6 col-sm-12 -->
+            </div>
+         <div>
+         <div class="panel row">
+            <div id="app-choices" class="well start-invisible col-md-6 col-sm-12">
+               <p id="app-prompt"></p>
+               <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                     <select id="app-name">
+                     </select>
+                  </div> <!-- col-md-6 col-sm-12 -->
+                  <div class="col-md-6 col-sm-12">
+                     <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
+                  </div> <!-- col-md-6 col-sm-12 -->
+               </div> <!-- "row" -->
+            </div> <!-- "well" -->
+         <div class="panel row">
+            <div id="veh-choices" class="well start-invisible col-md-6 col-sm-12">
+               <p id="veh-prompt"></p>
+               <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                     <select id="veh-name">
+                     </select>
+                  </div> <!-- col-md-6 col-sm-12 -->
+                  <div class="col-md-6 col-sm-12">
+                     <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
+                  </div> <!-- col-md-6 col-sm-12 -->
+               </div> <!-- "row" -->
+            </div> <!-- "well" -->
+        </div> <!-- container -->
+
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/catalog.js"></script>
+        <script src="js/vehicles.js"></script>
+        <script src="js/rulesets.js"></script>
+        <script src="js/entities.js"></script>
         <script src="js/swQuickBuy.js"></script>
     </body>
     <footer>
-        </footer>
-    </html>
+    </footer>
+</html>
