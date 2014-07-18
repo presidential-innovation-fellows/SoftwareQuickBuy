@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+
+    <title>UpToUs Bootstrap Edition</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+    <link href="css/uptous.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UpToUs using Bootstrap</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+
+      <div class="page-header">
+	<h2><img src="assets/logo-app.gif"></img>
+        Welcome to the new UpToUs</h2>
+      </div>
+
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h4 class="panel-title">
+	  <a data-toggle="collapse" data-parent="#accordion" href="#collapseUptous">
+	    My UpToUs
+	  </a>
+	</h4>
+      </div>
+      <div id="collapseUptous" class="panel-collapse collapse in">
+	<div class="panel-body">
+    <div class="row">
+	<div class="col-md-5">
+	    <div class="page-header">
+	      <h2>Latest news</h2>
+            </div>
+	</div>
+	<div class="col-md-7">
+	   <div class="page-header">
+	      <h2>Recent photos</h1>
+           </div>
+	</div>
+      </div>
+      <div class="row">
+	  <div class="col-md-5">
+	    <div class="well">
+	      <p>This page is a demonstration of how we can quickly build a Bootstrap version of UpToUs
+	      that looks great on a desktop browser or a mobile device.
+	      Of course there is no function yet, but please come back soon.</p>
+	      <p>Bootstrap creates a responsive design. Try resizing the browser and notice how everything
+	      rearranges itself. Take a look at the open close menu in the upper right.
+	      Notice how it appears when needed.</p>
+	    </div>
+	  </div>
+	<div class="col-md-7">
+	  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	    <!-- Indicators -->
+	    <ol class="carousel-indicators">
+	      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	    </ol>
+
+	    <!-- Wrapper for slides -->
+	    <div class="carousel-inner">
+	      <div class="item active">
+		<img src="assets/carousel1.jpg" alt="...">
+		<div class="carousel-caption">
+		  Picture 1
+		</div>
+	      </div>
+	      <div class="item">
+		<img src="assets/carousel2.jpg" alt="...">
+		<div class="carousel-caption">
+		  Picture B
+		</div>
+	      </div>
+	      <div class="item">
+		<img src="assets/carousel3.jpg" alt="...">
+		<div class="carousel-caption">
+		  Picture III
+		</div>
+	      </div>
+	      <div class="item">
+		<img src="assets/carousel4.jpg" alt="...">
+		<div class="carousel-caption">
+		  The last picture.
+		</div>
+	      </div>
+	  </div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
+      </div>
+
+	</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h4 class="panel-title">
+	  <a data-toggle="collapse" data-parent="#accordion" href="#collapseCommunities">
+	    My Communities
+	  </a>
+	</h4>
+      </div>
+      <div id="collapseCommunities" class="panel-collapse collapse">
+	<div class="panel-body">
+	  These are my communities
+	</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h4 class="panel-title">
+	  <a data-toggle="collapse" data-parent="#accordion" href="#collapseCalendar">
+	    My Calendar
+	  </a>
+	</h4>
+      </div>
+      <div id="collapseCalendar" class="panel-collapse collapse">
+	<div class="panel-body">
+	  This is my calendar.
+	</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h4 class="panel-title">
+	  <a data-toggle="collapse" data-parent="#accordion" href="#collapsePeople">
+	    Members and Invitations
+	  </a>
+	</h4>
+      </div>
+      <div id="collapsePeople" class="panel-collapse collapse">
+	<div class="panel-body">
+	  <div class="well" id="members">
+	</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h4 class="panel-title">
+	  <a data-toggle="collapse" data-parent="#accordion" href="#collapseEvents">
+	    My Events
+	  </a>
+	</h4>
+      </div>
+      <div id="collapseEvents" class="panel-collapse collapse">
+	<div class="panel-body">
+	  <div class="well" id="events">
+	</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- User Info Modal -->
+  <div class="modal fade" id="userDetails" tabindex="-1" role="dialog" aria-labelledby="userDetails" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	  <h4 class="modal-title" id="userDetails">User Details</h4>
+        </div>
+        <div class="modal-body">
+	    <p>All about the member.</p>
+	    <p id="email">this should have been replaced.</p>
+	</div>
+	<div class="modal-footer">
+	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event Info Modal -->
+  <div class="modal fade" id="eventDetails" tabindex="-1" role="dialog" aria-labelledby="eventDetails" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	  <h4 class="modal-title" id="eventDetails">Event Details</h4>
+        </div>
+        <div class="modal-body">
+	</div>
+	<div class="modal-footer">
+	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /Modal -->
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+    <script src="js/uptous.js"></script>
+  </body>
+</html>

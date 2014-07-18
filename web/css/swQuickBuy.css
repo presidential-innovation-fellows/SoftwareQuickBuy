@@ -1,0 +1,44 @@
+            body {
+                background-color: #ccccff;
+            }
+            .container {
+                width: 640px;
+                margin: 2em auto 2em auto;
+                padding: 1em;
+                font-family: Verdana, Arial;
+                font-size: 18px;
+                border: solid black 2px;
+                background-color: DarkBlue;
+                color: #dddddd;
+            }
+            .content {
+                width: 100%;
+                margin: 0px;
+                padding: 0.5em;
+                background-color: DarkBlue;
+                color: #dddddd;
+            }
+            .divider-row {
+                background-color: DarkBlue;
+                color: #dddddd;
+            }
+            .item {
+                margin: 0px;
+                padding: 0em;
+                background-color: white;
+                color: black;
+                border: solid DarkBlue 2px;
+            }
+            .container td.question {
+                text-align: right;
+            }
+            .container td.response {
+                text-align:left;
+            }
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
+            .start-invisible {
+                visibility:hidden;
+            }

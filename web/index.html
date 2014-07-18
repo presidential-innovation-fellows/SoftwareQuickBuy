@@ -1,57 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Software QuickBuy Demo From CAP</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <script src="jquery-1.8.3.min.js"></script>
-        <style>
-            body {
-                background-color: #ccccff;
-            }
-            .container {
-                width: 640px;
-                margin: 2em auto 2em auto;
-                padding: 1em;
-                font-family: Verdana, Arial;
-                font-size: 18px;
-                border: solid black 2px;
-                background-color: DarkBlue;
-                color: #dddddd;
-            }
-            .content {
-                width: 100%;
-                margin: 0px;
-                padding: 0.5em;
-                background-color: DarkBlue;
-                color: #dddddd;
-            }
-            .divider-row {
-                background-color: DarkBlue;
-                color: #dddddd;
-            }
-            .item {
-                margin: 0px;
-                padding: 0em;
-                background-color: white;
-                color: black;
-                border: solid DarkBlue 2px;
-            }
-            .container td.question {
-                text-align: right;
-            }
-            .container td.response {
-                text-align:left;
-            }
-            .logo-container {
-                width: 120px;
-                height: 120px;
-            }
-            .start-invisible {
-                visibility:hidden;
-            }
-        </style>
-    </head>
-    <body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>QuickBuy for Software</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/swQuickBuy.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
         <div class="container">
             <div class="content">
                 Welcome to the Software QuickBuy assistant.
@@ -118,158 +98,13 @@
                     </tr>
             </table>
         </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+        <script src="js/swQuickBuy.js"></script>
     </body>
     <footer>
-        <script>
-            // someday this information will come via an API
-            var vehicles = [
-                {
-                    name: 'GSA Schedule 70',
-                    shortname: 'gs70',
-                    description: 'This is a recommended FSSI vehicle'
-                },
-                {
-                    name: 'Army CHESS',
-                    shortname: 'chss',
-                    description: 'This vehicle is required for DOD acquisition and unavailable to others'
-                },
-                {
-                    name: 'NASA SEWP',
-                    shortname: 'sewp',
-                    description: 'This open to all government agencies but does not guarantee TAA compliance'
-                }
-            ];
-            var catalog = [
-                {
-                    publisher: 'Adobe',
-                    "pub-short": 'adbe',
-                    apps: [
-                        {
-                            name: 'Adobe Creative Cloud',
-                            "app-short": 'adcc',
-                            vehicleShortnames: [ 'chss', 'sewp' ]
-                        },
-                        {
-                            name: 'Adobe Connect',
-                            "app-short": 'admp',
-                            vehicleShortnames: [ 'sewp', 'gs70' ]
-                        },
-                        {
-                            name: 'Adobe Acrobat Pro',
-                            "app-short": 'caro',
-                            vehicleShortnames: [ 'gs70' ]
-                        }
-                    ]
-                },
-                {
-                    publisher: 'Intuit',
-                    "pub-short": 'intu',
-                    apps: [
-                        {
-                            name: 'QuickBooks Online',
-                            "app-short": 'qboe',
-                            vehicleShortnames: [ 'gs70' ]
-                        },
-                        {
-                            name: 'TurboTax',
-                            "app-short": 'ttax',
-                            vehicleShortnames: [ 'sewp', 'gs70' ]
-                        },
-                        {
-                            name: 'Intuit Payroll Service',
-                            "app-short": 'pyrl',
-                            vehicleShortnames: [ 'sewp', 'gs70' ]
-                        }
-                    ]
-                },
-                {
-                    publisher: 'Microsoft',
-                    "pub-short": 'msft',
-                    apps: [
-                        {
-                            name: 'Microsoft Windows',
-                            "app-short": 'wind',
-                            vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
-                        },
-                        {
-                            name: 'Microsoft Office',
-                            "app-short": 'offc',
-                            vehicleShortnames: [ 'gs70' ]
-                        },
-                        {
-                            name: 'Microsoft Sharepoint',
-                            "app-short": 'shar',
-                            vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
-                        }
-                    ]
-                }
-            ];
-
-            var publisher = {};
-            $('select#publisher-name').on('change', function(ev) {
-                publisher = {};
-                catalog.some(function(val, indx, array) {
-                    if (val["pub-short"] === ev.target.value) {
-                        publisher = val;
-                        return true;
-                    }
-                });
-                $('#app-prompt').css('visibility',
-                    'visible').html(
-                    'You picked ' + publisher.publisher +
-                    '. Now pick a product');
-                $('#app-choices').css('visibility',
-                    'visible');
-                $('img#publisher-logo').attr('src',
-                    publisher["pub-short"] + '-logo.png');
-                var optionHtml = '<option selected disabled hidden value="">' +
-                                   'Choose&hellip;';
-                publisher.apps.forEach( function(val, indx, array) {
-                    optionHtml += 
-                        '<option name="app" value="' + val["app-short"] +'">' +
-                                val.name +
-                                '</option>';
-                });
-                $('select#app-name').html(optionHtml);
-            });
-
-            $('select#app-name').on('change', function(ev) {
-                var application = {};
-                publisher.apps.some(function(val, indx, array) {
-                    if (val["app-short"] === ev.target.value) {
-                        application = val;
-                        return true;
-                    }
-                });
-                $('#veh-prompt').css('visibility',
-                    'visible').html(
-                    'You picked ' + application.name +
-                    '. Now pick a purchase vehicle');
-                $('#veh-choices').css('visibility',
-                    'visible');
-                var optionHtml = '<option selected disabled hidden value="">' +
-                                   'Choose&hellip;';
-                application.vehicleShortnames.forEach(
-                            function(shortname, indx, array) {
-                    var vehicle = {};
-                    vehicles.some(function(thisVehicle, indx, array) {
-                        if (thisVehicle.shortname === shortname) {
-                            vehicle = thisVehicle;
-                        optionHtml += 
-                            '<option name="veh" value="' + vehicle.shortname +
-                                '">' + vehicle.name + '</option>';
-                        return true;
-                        }
-                    });
-                });
-                $('select#veh-name').html(optionHtml);
-                $('#' + this.value + '-prompt').css('visibility',
-                    'visible');
-                $('#' + this.value + '-choices').css('visibility',
-                    'visible');
-                $('img#app-logo').attr('src',
-                    this.value + '-logo.png');
-            });
-            </script>
         </footer>
     </html>
