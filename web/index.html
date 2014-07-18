@@ -105,12 +105,12 @@
                         <td class="logo-container">
                             <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
                     </tr>
-                    <tr id="app-prompt" class="start-invisible divider-row">
+                    <tr id="veh-prompt" class="start-invisible divider-row">
                         <td colspan="2"
                         </td></tr>
-                    <tr id = "app-choices" class="divider-row start-invisible item">
+                    <tr id = "veh-choices" class="divider-row start-invisible item">
                         <td>
-                            <select id="app-name">
+                            <select id="veh-name">
                             </select>
                         </td>
                         <td class="logo-container">
@@ -122,22 +122,42 @@
     <footer>
         <script>
             // someday this information will come via an API
+            var vehicles = [
+                {
+                    name: 'GSA Schedule 70',
+                    shortname: 'gs70',
+                    description: 'This is a recommended FSSI vehicle'
+                },
+                {
+                    name: 'Army CHESS',
+                    shortname: 'chss',
+                    description: 'This vehicle is required for DOD acquisition and unavailable to others'
+                },
+                {
+                    name: 'NASA SEWP',
+                    shortname: 'sewp',
+                    description: 'This open to all government agencies but does not guarantee TAA compliance'
+                }
+            ];
             var catalog = [
                 {
                     publisher: 'Adobe',
                     "pub-short": 'adbe',
                     apps: [
                         {
-                            app: 'Adobe Creative Cloud',
-                            "app-short": 'adcc'
+                            name: 'Adobe Creative Cloud',
+                            "app-short": 'adcc',
+                            vehicleShortnames: [ 'chss', 'sewp' ]
                         },
                         {
-                            app: 'Adobe Connect',
-                            "app-short": 'admp'
+                            name: 'Adobe Connect',
+                            "app-short": 'admp',
+                            vehicleShortnames: [ 'sewp', 'gs70' ]
                         },
                         {
-                            app: 'Adobe Acrobat Pro',
-                            "app-short": 'caro'
+                            name: 'Adobe Acrobat Pro',
+                            "app-short": 'caro',
+                            vehicleShortnames: [ 'gs70' ]
                         }
                     ]
                 },
@@ -146,16 +166,19 @@
                     "pub-short": 'intu',
                     apps: [
                         {
-                            app: 'QuickBooks Online',
-                            "app-short": 'qboe'
+                            name: 'QuickBooks Online',
+                            "app-short": 'qboe',
+                            vehicleShortnames: [ 'gs70' ]
                         },
                         {
-                            app: 'TurboTax',
-                            "app-short": 'ttax'
+                            name: 'TurboTax',
+                            "app-short": 'ttax',
+                            vehicleShortnames: [ 'sewp', 'gs70' ]
                         },
                         {
-                            app: 'Intuit Payroll Service',
-                            "app-short": 'pyrl'
+                            name: 'Intuit Payroll Service',
+                            "app-short": 'pyrl',
+                            vehicleShortnames: [ 'sewp', 'gs70' ]
                         }
                     ]
                 },
@@ -164,23 +187,27 @@
                     "pub-short": 'msft',
                     apps: [
                         {
-                            app: 'Microsoft Windows',
-                            "app-short": 'wind'
+                            name: 'Microsoft Windows',
+                            "app-short": 'wind',
+                            vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
                         },
                         {
-                            app: 'Microsoft Office',
-                            "app-short": 'offc'
+                            name: 'Microsoft Office',
+                            "app-short": 'offc',
+                            vehicleShortnames: [ 'gs70' ]
                         },
                         {
-                            app: 'Microsoft Sharepoint',
-                            "app-short": 'shar'
+                            name: 'Microsoft Sharepoint',
+                            "app-short": 'shar',
+                            vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
                         }
                     ]
                 }
             ];
 
+            var publisher = {};
             $('select#publisher-name').on('change', function(ev) {
-                var publisher = {};
+                publisher = {};
                 catalog.some(function(val, indx, array) {
                     if (val["pub-short"] === ev.target.value) {
                         publisher = val;
@@ -200,12 +227,42 @@
                 publisher.apps.forEach( function(val, indx, array) {
                     optionHtml += 
                         '<option name="app" value="' + val["app-short"] +'">' +
-                                val.app +
+                                val.name +
                                 '</option>';
                 });
                 $('select#app-name').html(optionHtml);
             });
-            $('select#app-name').on('change', function( ) {
+
+            $('select#app-name').on('change', function(ev) {
+                var application = {};
+                publisher.apps.some(function(val, indx, array) {
+                    if (val["app-short"] === ev.target.value) {
+                        application = val;
+                        return true;
+                    }
+                });
+                $('#veh-prompt').css('visibility',
+                    'visible').html(
+                    'You picked ' + application.name +
+                    '. Now pick a purchase vehicle');
+                $('#veh-choices').css('visibility',
+                    'visible');
+                var optionHtml = '<option selected disabled hidden value="">' +
+                                   'Choose&hellip;';
+                application.vehicleShortnames.forEach(
+                            function(shortname, indx, array) {
+                    var vehicle = {};
+                    vehicles.some(function(thisVehicle, indx, array) {
+                        if (thisVehicle.shortname === shortname) {
+                            vehicle = thisVehicle;
+                        optionHtml += 
+                            '<option name="veh" value="' + vehicle.shortname +
+                                '">' + vehicle.name + '</option>';
+                        return true;
+                        }
+                    });
+                });
+                $('select#veh-name').html(optionHtml);
                 $('#' + this.value + '-prompt').css('visibility',
                     'visible');
                 $('#' + this.value + '-choices').css('visibility',

@@ -4,3 +4,4 @@ junk.*
 foo.*
 *.foo
 .DS_Store
+*.swp
