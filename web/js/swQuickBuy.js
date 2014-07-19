@@ -89,10 +89,15 @@ $('select#category-name').on('change', function(ev) {
 $('select#app-name').on('change', function(ev) {
     setProgress('50');
     var application = {};
-    publisher.apps.some(function(val, indx, array) {
-        if (val.shortname === ev.target.value) {
-            application = val;
-            return true;
+    catalog.some( function(pub, pubIndex, pubArray) {
+        pub.apps.some(function(app, appIndex, appArray) {
+            if (app.shortname === ev.target.value) {
+                application = app;
+                return true;
+            }
+        });
+        if (application) {
+           return true;
         }
     });
     $('#veh-prompt').css('visibility',
