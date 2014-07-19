@@ -34,47 +34,29 @@
       <div class="container">
          <div class="page-header">
             <h1>Welcome to QuickBuy<br /><small>Acquire Software via ELA Quickly and Easily</small><h1>
-         </div>
+         </div> <!-- page-header -->
          <div class="panel panel-default">
             <div class="panel-heading">
                <h3 class="panel-title">Your progress</h3>
-            </div>
+            </div> <!-- panel-heading" -->
             <div class="panel-body">
                <div class="progress">
                   <div id="total-progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
                      <span class="sr-only">0% Complete</span>
-                  </div>
-               </div>
-            </div>
-         </div>
+                  </div> <!-- progress-bar -->
+               </div> <!-- panel-body -->
+            </div> <!-- panel-heading" -->
+         </div> <!-- panel -->
          <div class="panel row">
                <div class="well col-md-6 col-sm-12">
                   I know my needs. Show me my choices.
                   <div class="row">
                      <div class="col-md-6 col-sm-12">
-                        <select id="app-type-name">
-                           <option selected disabled hidden value=''>
-                              Choose&hellip;
-                           </option>
-                           <option name="app-type" value="prod">
-                              Office Productivity
-                           </option>
-                           <option name="app-type" value="visu">
-                              Visualization
-                           </option>
-                           <option name="app-type" value="grph">
-                              Graphics and Media
-                           </option>
-                           <option name="app-type" value="anal">
-                              Business Analytics
-                           </option>
-                           <option name="app-type" value="rdbs">
-                              Relational Database
-                           </option>
-                           </select>
-                        </div> <!-- col-md-6 col-sm-12 -->
+                        <select id="category-name">
+                       </select>
+                    </div> <!-- col-md-6 col-sm-12 -->
                         <div class="col-md-6 col-sm-12">
-                           <img alt='Publisher' id="publisher-logo" src="publisher-choices.png" width="100" height="100"></img>
+                           <img alt='Software Category' id="category-logo" src="assets/sw-categories.png" width="100" height="100"></img>
                         </div> <!-- col-md-6 col-sm-12 -->
                      </div> <!-- row -->
                   </div> <!-- col-md-6 col-sm-12 -->
@@ -83,30 +65,14 @@
                   <div class="row">
                      <div class="col-md-6 col-sm-12">
                         <select id="publisher-name">
-                           <option selected disabled hidden value=''>
-                              Choose&hellip;
-                           </option>
-                           <option name="publisher" value="adbe">
-                              Adobe
-                           </option>
-                           <option name="publisher" value="intu">
-                              Intuit
-                           </option>
-                           <option name="publisher" value="msft">
-                              Microsoft
-                           </option>
-                           <option name="publisher" value="orcl">
-                              Oracle
-                           </option>
                            </select>
                         </div> <!-- col-md-6 col-sm-12 -->
                         <div class="col-md-6 col-sm-12">
-                           <img alt='Publisher' id="publisher-logo" src="publisher-choices.png" width="100" height="100"></img>
+                           <img alt='Publisher' id="publisher-logo" src="assets/publisher-choices.png" width="100" height="100"></img>
                         </div> <!-- col-md-6 col-sm-12 -->
                      </div> <!-- row -->
-                  </div> <!-- col-md-6 col-sm-12 -->
-            </div>
-         <div>
+                  </div> <!-- well col-md-6 col-sm-12 -->
+            </div> <!-- panel-heading" -->
          <div class="panel row">
             <div id="app-choices" class="well start-invisible col-md-6 col-sm-12">
                <p id="app-prompt"></p>
@@ -116,7 +82,7 @@
                      </select>
                   </div> <!-- col-md-6 col-sm-12 -->
                   <div class="col-md-6 col-sm-12">
-                     <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
+                     <img alt='Application' id="app-logo" src="assets/publisher-choices.png" width="100" height="100"></img>
                   </div> <!-- col-md-6 col-sm-12 -->
                </div> <!-- "row" -->
             </div> <!-- "well" -->
@@ -129,7 +95,7 @@
                      </select>
                   </div> <!-- col-md-6 col-sm-12 -->
                   <div class="col-md-6 col-sm-12">
-                     <img alt='Application' id="app-logo" src="publisher-choices.png" width="100" height="100"></img>
+                     <img alt='Application' id="veh-logo" src="assets/publisher-choices.png" width="100" height="100"></img>
                   </div> <!-- col-md-6 col-sm-12 -->
                </div> <!-- "row" -->
             </div> <!-- "well" -->
@@ -144,6 +110,7 @@
         <script src="js/vehicles.js"></script>
         <script src="js/rulesets.js"></script>
         <script src="js/entities.js"></script>
+        <script src="js/categories.js"></script>
         <script src="js/swQuickBuy.js"></script>
     </body>
     <footer>

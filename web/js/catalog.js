@@ -1,63 +1,84 @@
             var catalog = [
                 {
-                    publisher: 'Adobe',
-                    "pub-short": 'adbe',
+                    name: 'Adobe',
+                    shortname: 'adbe',
                     apps: [
                         {
                             name: 'Adobe Creative Cloud',
-                            "app-short": 'adcc',
+                            "shortname": 'adcc',
+                            categories: [ 'prod', 'visu', 'grph', 'coll' ],
                             vehicleShortnames: [ 'chss', 'sewp' ]
                         },
                         {
                             name: 'Adobe Connect',
-                            "app-short": 'admp',
+                            "shortname": 'admp',
+                            categories: [ 'coll' ],
                             vehicleShortnames: [ 'sewp', 'gs70' ]
                         },
                         {
                             name: 'Adobe Acrobat Pro',
-                            "app-short": 'caro',
+                            "shortname": 'caro',
+                            categories: [ 'prod', 'visu', 'grph', 'coll' ],
                             vehicleShortnames: [ 'gs70' ]
                         }
                     ]
                 },
                 {
-                    publisher: 'Intuit',
-                    "pub-short": 'intu',
+                    name: 'Oracle',
+                    shortname: 'orcl',
+                    apps: [
+                        {
+                            name: 'Oracle RDBS',
+                            "shortname": 'ordb',
+                            categories: [ 'coll', 'rdbs' ],
+                            vehicleShortnames: [ 'gs70' ]
+                        }
+                    ]
+                },
+                {
+                    name: 'Intuit',
+                    shortname: 'intu',
                     apps: [
                         {
                             name: 'QuickBooks Online',
-                            "app-short": 'qboe',
+                            "shortname": 'qboe',
+                            categories: [ 'prod', 'coll', 'rdbs' ],
                             vehicleShortnames: [ 'gs70' ]
                         },
                         {
                             name: 'TurboTax',
-                            "app-short": 'ttax',
+                            "shortname": 'ttax',
+                            categories: [ 'coll' ],
                             vehicleShortnames: [ 'sewp', 'gs70' ]
                         },
                         {
                             name: 'Intuit Payroll Service',
-                            "app-short": 'pyrl',
+                            "shortname": 'pyrl',
+                            categories: [ 'rdbs' ],
                             vehicleShortnames: [ 'sewp', 'gs70' ]
                         }
                     ]
                 },
                 {
                     publisher: 'Microsoft',
-                    "pub-short": 'msft',
+                    shortname: 'msft',
                     apps: [
                         {
                             name: 'Microsoft Windows',
-                            "app-short": 'wind',
+                            "shortname": 'wind',
+                            categories: [ 'oses', 'prod', 'coll', 'rdbs' ],
                             vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
                         },
                         {
                             name: 'Microsoft Office',
-                            "app-short": 'offc',
+                            "shortname": 'offc',
+                            categories: [ 'prod', 'rdbs' ],
                             vehicleShortnames: [ 'gs70' ]
                         },
                         {
                             name: 'Microsoft Sharepoint',
-                            "app-short": 'shar',
+                            "shortname": 'shar',
+                            categories: [ 'prod', 'coll' ],
                             vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
                         }
                     ]
