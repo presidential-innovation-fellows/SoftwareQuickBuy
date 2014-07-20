@@ -5,21 +5,45 @@
                     apps: [
                         {
                             name: 'Adobe Creative Cloud',
-                            "shortname": 'adcc',
+                            shortname: 'adcc',
                             categories: [ 'prod', 'visu', 'grph', 'coll' ],
-                            vehicleShortnames: [ 'chss', 'sewp' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'chss',
+                                    unitPrice: '99',
+                                    minimumOrder: 100
+                                },
+                                {
+                                    shortname: 'sewp',
+                                    unitPrice: '95'
+                                }
+                            ]
                         },
                         {
                             name: 'Adobe Connect',
-                            "shortname": 'admp',
+                            shortname: 'admp',
                             categories: [ 'coll' ],
-                            vehicleShortnames: [ 'sewp', 'gs70' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '49'
+                                },
+                                {
+                                    shortname: 'sewp',
+                                    unitPrice: '45'
+                                }
+                            ]
                         },
                         {
                             name: 'Adobe Acrobat Pro',
-                            "shortname": 'caro',
+                            shortname: 'caro',
                             categories: [ 'prod', 'visu', 'grph', 'coll' ],
-                            vehicleShortnames: [ 'gs70' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '149'
+                                }
+                            ]
                         }
                     ]
                 },
@@ -29,9 +53,15 @@
                     apps: [
                         {
                             name: 'Oracle RDBS',
-                            "shortname": 'ordb',
+                            shortname: 'ordb',
                             categories: [ 'coll', 'rdbs' ],
-                            vehicleShortnames: [ 'gs70' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unit: 'seat',
+                                    unitPrice: '19949'
+                                }
+                            ]
                         }
                     ]
                 },
@@ -41,45 +71,99 @@
                     apps: [
                         {
                             name: 'QuickBooks Online',
-                            "shortname": 'qboe',
+                            shortname: 'qboe',
                             categories: [ 'prod', 'coll', 'rdbs' ],
-                            vehicleShortnames: [ 'gs70' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '19'
+                                }
+                            ]
                         },
                         {
                             name: 'TurboTax',
-                            "shortname": 'ttax',
+                            shortname: 'ttax',
                             categories: [ 'coll' ],
-                            vehicleShortnames: [ 'sewp', 'gs70' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '19'
+                                },
+                                {
+                                    shortname: 'sewp',
+                                    unitPrice: '9'
+                                }
+                            ]
                         },
                         {
                             name: 'Intuit Payroll Service',
-                            "shortname": 'pyrl',
+                            shortname: 'pyrl',
                             categories: [ 'rdbs' ],
-                            vehicleShortnames: [ 'sewp', 'gs70' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '19'
+                                },
+                                {
+                                    shortname: 'sewp',
+                                    unitPrice: '9'
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    publisher: 'Microsoft',
+                    name: 'Microsoft',
                     shortname: 'msft',
                     apps: [
                         {
                             name: 'Microsoft Windows',
-                            "shortname": 'wind',
+                            shortname: 'wind',
                             categories: [ 'oses', 'prod', 'coll', 'rdbs' ],
-                            vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '19'
+                                },
+                                {
+                                    shortname: 'chss',
+                                    unitPrice: '29'
+                                },
+                                {
+                                    shortname: 'sewp',
+                                    unitPrice: '9'
+                                }
+                            ]
                         },
                         {
                             name: 'Microsoft Office',
-                            "shortname": 'offc',
+                            shortname: 'offc',
                             categories: [ 'prod', 'rdbs' ],
-                            vehicleShortnames: [ 'gs70' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '19'
+                                }
+                            ]
                         },
                         {
                             name: 'Microsoft Sharepoint',
-                            "shortname": 'shar',
+                            shortname: 'shar',
                             categories: [ 'prod', 'coll' ],
-                            vehicleShortnames: [ 'gs70', 'sewp', 'chss' ]
+                            vehicleDetails: [
+                                {
+                                    shortname: 'gs70',
+                                    unitPrice: '89'
+                                },
+                                {
+                                    shortname: 'chss',
+                                    unitPrice: '88'
+                                },
+                                {
+                                    shortname: 'sewp',
+                                    unitPrice: '99'
+                                }
+                            ]
                         }
                     ]
                 }

@@ -28,54 +28,78 @@
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
+      <![endif]-->
+   </head>
+
+   <body>
+      <div class="jumbotron">
+         <div class="container">
+            <h1>
+               Welcome to QuickBuy<br />
+               <small>
+                  Acquire Software via ELA Quickly and Easily
+               </small>
+             <h1>
+          </div>
+      </div>
       <div class="container">
-         <div class="page-header">
-            <h1>Welcome to QuickBuy<br /><small>Acquire Software via ELA Quickly and Easily</small><h1>
-         </div> <!-- page-header -->
          <div class="panel panel-default">
             <div class="panel-heading">
-               <h3 class="panel-title">Your progress</h3>
+               <h2 class="panel-title">Your progress</h2>
             </div> <!-- panel-heading" -->
             <div class="panel-body">
                <div class="progress">
                   <div id="total-progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-                     <span class="sr-only">0% Complete</span>
+                     <span id="total-progress-sr-only" class="sr-only">0% Complete</span>
                   </div> <!-- progress-bar -->
+                  </div> <!-- progress -->
                </div> <!-- panel-body -->
-            </div> <!-- panel-heading" -->
          </div> <!-- panel -->
-         <div class="panel row">
-               <div class="well col-md-6 col-sm-12">
-                  I know my needs. Show me my choices.
-                  <div class="row">
-                     <div class="col-md-6 col-sm-12">
-                        <select id="category-name">
-                       </select>
-                    </div> <!-- col-md-6 col-sm-12 -->
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h2 class="panel-title">Choose where you would like to begin</h2>
+            </div> <!-- panel-heading" -->
+            <div class="panel-body">
+               <div class="row">
+                  <div class="well col-md-6 col-sm-12">
+                     <div class="header">
+                        <h3 id="cat-prompt "class="panel-title">
+                           I know my needs. Please show me my choices.
+                        </h3>
+                     </div> <!-- header -->
+                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                           <img alt='Software Category' id="category-logo" src="assets/sw-categories.png" width="100" height="100"></img>
-                        </div> <!-- col-md-6 col-sm-12 -->
-                     </div> <!-- row -->
-                  </div> <!-- col-md-6 col-sm-12 -->
-               <div class="well col-md-6 col-sm-12">
-                     I have done my research, I am ready to select a publisher.
-                  <div class="row">
-                     <div class="col-md-6 col-sm-12">
-                        <select id="publisher-name">
+                           <select id="category-name">
                            </select>
                         </div> <!-- col-md-6 col-sm-12 -->
                         <div class="col-md-6 col-sm-12">
-                           <img alt='Publisher' id="publisher-logo" src="assets/publisher-choices.png" width="100" height="100"></img>
+                          <img alt='Software Category' id="category-logo" src="assets/sw-categories.png" width="100" height="100"></img>
                         </div> <!-- col-md-6 col-sm-12 -->
-                     </div> <!-- row -->
-                  </div> <!-- well col-md-6 col-sm-12 -->
-            </div> <!-- panel-heading" -->
-         <div class="panel row">
-            <div id="app-choices" class="well start-invisible col-md-6 col-sm-12">
-               <p id="app-prompt"></p>
+                    </div> <!-- row -->
+                 </div> <!-- col-md-6 col-sm-12 -->
+                 <div class="well col-md-6 col-sm-12">
+                    <div class="header">
+                       <h4><span id="pub-prompt">
+                          I have done my research, I would like to select a publisher.
+                       </h4>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                         <select id="publisher-name">
+                         </select>
+                      </div> <!-- col-md-6 col-sm-12 -->
+                      <div class="col-md-6 col-sm-12">
+                         <img alt='Publisher' id="publisher-logo" src="assets/publisher-choices.png" width="100" height="100"></img>
+                      </div> <!-- col-md-6 col-sm-12 -->
+                   </div> <!-- row -->
+               </div> <!-- well col-md-6 col-sm-12 -->
+            </div> <!-- panel-body -->
+         </div> <!-- panel -->
+         <div class="panel">
+            <div id="app-choices" class="well start-invisible col-md-12 col-sm-12">
+                <div class="header">
+                  <h4><span id="app-prompt">
+                  </h4>
                <div class="row">
                   <div class="col-md-6 col-sm-12">
                      <select id="app-name">
@@ -86,33 +110,101 @@
                   </div> <!-- col-md-6 col-sm-12 -->
                </div> <!-- "row" -->
             </div> <!-- "well" -->
-         <div class="panel row">
-            <div id="veh-choices" class="well start-invisible col-md-6 col-sm-12">
-               <p id="veh-prompt"></p>
-               <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                     <select id="veh-name">
-                     </select>
-                  </div> <!-- col-md-6 col-sm-12 -->
-                  <div class="col-md-6 col-sm-12">
-                     <img alt='Application' id="veh-logo" src="assets/publisher-choices.png" width="100" height="100"></img>
-                  </div> <!-- col-md-6 col-sm-12 -->
-               </div> <!-- "row" -->
+         <div class="panel">
+            <div id="veh-choices" class="well start-invisible col-md-12 col-sm-12">
+               <div class="header">
+               <h4><span id="veh-prompt"></span></h4>
+               </div>
+               <div id="acq-options" class="list-group">
+               </div> <!-- list-group -->
             </div> <!-- "well" -->
-        </div> <!-- container -->
+        </div> <!-- panel -->
+        <div class="panel">
+           <div id="acq-params" class="well start-invisible col-md-12 col-sm-12">
+              <div class="header">
+                 <h4><span id="acq-prompt">Complete your order</span></h4>
+              </div> <!- header -->
+                 <div class="row">
+                 <div class="col-md-6 col-sm-6">
+                   <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                         <label for="quantity" class="col-sm-2 control-label">
+                            Quantity
+                         </label> <!-- col-sm-1 -->
+                         <div class="col-sm-6">
+                            <div class="input-group">
+                               <input type="number" class="form-control" id="quantity" placeholder="100" value="100">
+                               <span class="input-group-addon">seats</span>
+                            </div> <!-- input-group -->
+                            <span class="help-block">Minimum order quantity is 100</span>
+                        </div> <!-- col-sm-6 -->
+                     </div> <!-- form group -->
+                     <div class="form-group">
+                     <label for="unit-price" class="col-sm-2 control-label">
+                       Unit Price
+                     </label>
+                     <div class="col-sm-6">
+                        <div class="input-group">
+                         <span class="input-group-addon">at $</span>
+                         <input disabled type="number" class="form-control" id="unit-price">
+                         <span class="input-group-addon">each</span>
+                        </div> <!-- input-group -->
+                     </div> <!-- col-sm-6 -->
+                 </div> <!-- form group -->
+                 <div class="form-group">
+                   <label for="total-cost" class="col-sm-2 control-label">
+                      Total Cost
+                   </label>
+                   <div class="col-sm-6">
+                      <div class="input-group">
+                         <span class="input-group-addon">$</span>
+                         <input disabled type="number" class="form-control" id="total-cost" placeholder="5.43">
+                      </div> <!-- input-group -->
+                   </div> <!-- col-sm-6 -->
+               </div> <!-- form-group -->
+           </form>
+       </div>
+       <div class="col-md-4 col-sm-4">
+       <button type="button" id="purchase" class="btn btn-lg btn-success" data-toggle="modal" data-target="#noSaleModal">Place Order</button>
+       </div> <!-- col-md-4 col-sm-4"  -->
+      </div> <!-- row -->
+         </div> <!-- "well" -->
+  </div> <!-- panel -->
+</div> <!-- container -->
+</div> <!-- container -->
+</div> <!-- container -->
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/catalog.js"></script>
-        <script src="js/vehicles.js"></script>
-        <script src="js/rulesets.js"></script>
-        <script src="js/entities.js"></script>
-        <script src="js/categories.js"></script>
-        <script src="js/swQuickBuy.js"></script>
-    </body>
-    <footer>
-    </footer>
+   <!-- Modal -->
+   <div class="modal fade" id="noSaleModal" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+           <h4 class="modal-title" id="noSaleModalLabel">Modal title</h4>
+         </div>
+         <div class="modal-body">
+           Really? Did you actally expect to place an order? You know I have been working on this for three days, right?
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+
+     </div>
+  </div>
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/vehicles.js"></script>
+    <script src="js/rulesets.js"></script>
+    <script src="js/entities.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/swQuickBuy.js"></script>
+</body>
+<footer>
+</footer>
 </html>
