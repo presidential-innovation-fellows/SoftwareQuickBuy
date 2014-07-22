@@ -1,4 +1,5 @@
 var itHwSolutions = [
+   {
       id: "nitaacCioSp3",
       type: "gwac",
       name: "NITAAC CIO-SP3: Chief Information Officer – Solutions and Partners 3 (NIH)",
@@ -29,7 +30,7 @@ var itHwSolutions = [
          orderingUrl: "https://nitaac.nih.gov/nitaac/e-ordering-systems"
       },
       offerings: [
-         "IT Services for Biomedical Research, Health Sciences, and Healthcare"
+         "IT Services for Biomedical Research, Health Sciences, and Healthcare",
          "Chief Information Officer (CIO) Support",
          "Imaging",
          "Outsourcing",
@@ -37,10 +38,11 @@ var itHwSolutions = [
          "Critical Infrastructure Protection and Information Assurance",
          "Digital Government",
          "Enterprise Management Systems",
-         "Software Development
+         "Software Development"
       ]
    },
-   nasaSewp: {
+   {
+      id: 'nasaSewp',
       type: "gwac",
       name: "SEWP: Solutions for Enterprise-Wide Procurement (NASA)",
       site: "http://www.sewp.nasa.gov/",
@@ -80,7 +82,8 @@ var itHwSolutions = [
          "Product-based Training"
       ]
    },
-   armyChess: {
+   {
+      id: 'armyChess',
       type: "idiq",
       name: "CHESS: Computer Hardware Enterprise Software and Solutions (Army)",
       site: "https://chess.army.mil/",
