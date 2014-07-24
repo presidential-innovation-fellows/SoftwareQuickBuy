@@ -186,7 +186,7 @@ itHwSolutions.forEach( function( item, itemIndex, itemArray) {
         '<a data-toggle="collapse" data-parent="#inner-accordion" href="subCollapse-' +
         item.id + '">' +
         item.name +
-        '"></a></h4></div> <!-- panel-heading -->' +
+        '</a></h4></div> <!-- panel-heading -->' +
         '<div id="subCollapse-' + item.id + '" class="panel-collapse collapse in">' +
         '<div class="panel-body">' +
 
@@ -243,7 +243,7 @@ $('button[id^="soln-action-"]').on('click',function( ev) {
                        ev.currentTarget.dataset.solution);
    switch ( ev.currentTarget.dataset.buttonAction ) {
       case 'edit':
-      alert('Edit ' + ev.currentTarget.dataset.solution);
+      $('#solution-editor').modal();
       break;
 
       case 'copy':
@@ -261,3 +261,15 @@ $('button[id^="soln-action-"]').on('click',function( ev) {
       break;
    }
 });
+
+$('#solution-editor').on('show', function (ev) {
+    $('#edit-form-group').html('that will show you');
+});
+
+
+/*
+
+<div id="edit-form-group" class="form group">
+                <label for="I am a thing that I am">Save Copy As</label>               <input type="text" class="form-control" id="proposed-name" placeholder="you cant read this anymore">
+
+                */

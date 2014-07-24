@@ -57,6 +57,31 @@
       </div> <!-- modal dialog -->
    </div> <!-- modal -->
 
+   <!-- Loaded when the 'edit solution button is pressed -->
+   <div class="modal fade" id="solution-editor" tabindex="-1" role="dialog" aria-labelledby="solutionEditorLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit Solution</h4>
+         </div>
+         <div class="modal-body">
+
+            <form role="form">
+              <div id="edit-form-group" class="form group">
+                <label for="I am a thing that I am">Save Copy As</label>
+               <input type="text" class="form-control" id="proposed-name" placeholder="you cant read this anymore">
+              </div>
+            </form>
+         </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+               <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <!-- Loaded when the 'copy solution button is pressed -->
    <div class="modal fade" id="solution-copier" tabindex="-1" role="dialog" aria-labelledby="solutionCopierLabel" aria-hidden="true">
    <div class="modal-dialog">
@@ -123,131 +148,34 @@
          <div class="panel panel-default"> <!-- 'Blue Pill' (view) -->>
             <div class="panel-heading">
                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapseView">
+                  <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapse-view-matrix">
                       Take the Blue Pill (Become a Hallway Visitor)
                   </a>
                </h4>
             </div> <!-- panel-heading -->
-            <div id="collapseView" class="panel-collapse collapse in">
+            <div id="collapse-view-matrix" class="panel-collapse collapse in">
                <div class="panel-body">
                   <form id="choose-compare" role="form">
                   </form> <!-- form -->
                   <button id="btn-view-matrix" class="btn btn-primary btn-default" data-toggle="modal" data-target="#viewTheMatrix">View</button>
                </div> <!-- panel-body -->
              </div> <!-- panel-collapse -->
-             <div class="panel panel-default">
-                <div class="panel-heading">
-                   <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapseEdit">
-                         Edit Existing Solutions
-                      </a>
-                   </h4>
-                </div> <!-- panel heading -->
-            <div id="collapseEdit" class="panel-collapse collapse">
-               <div class="panel-inner">
-                  <div class="panel-group" id="inner-accordion">
-                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                           <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#inner-accordion" href="#subCollapseTwo">
-                                 SUB COLLAPSE Two
-                              </a>
-                           </h4>
-                        </div> <!-- panel-heading -->
-                        <div id="subCollapseTwo" class="panel-collapse collapse in">
-                           <div class="panel-body">
-                              Contents of SUB COLLAPSE Two
-                           </div> <!-- panel-body -->
-                        </div> <!-- panel-collapse -->
-                     </div> <!-- panel -->
-                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                           <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#inner-accordion" href="#subCollapseThree">
-                                 SUB COLLAPSE Three
-                              </a>
-                           </h4>
-                        </div> <!-- panel-heading -->
-                        <div id="subCollapseThree" class="panel-collapse collapse in">
-                           <div class="panel-body">
-                              Contents of SUB COLLAPSE Three
-                           </div> <!-- panel-body -->
-                        </div> <!-- panel-collapse -->
-                     </div> <!-- panel -->
-                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                           <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#inner-accordion" href="#subCollapseOne">
-                                 SUB COLLAPSE ONE
-                              </a>
-                           </h4>
-                        </div> <!-- panel-heading -->
-                        <div id="subCollapseOne" class="panel-collapse collapse in">
-                           <div class="panel-body">
-                              Contents of SUB COLLAPSE ONE
-                           </div> <!-- panel-body -->
-                        </div> <!-- panel-collapse -->
-                     </div> <!-- panel -->
-           <div class="panel panel-default">
+          </div> <!-- class="panel panel-default" --> <!-- 'Red Pill' (edit) -->
+          <div class="panel panel-default"> <!-- 'Red Pill' (edit) -->
              <div class="panel-heading">
-               <h4 class="panel-title">
-                 <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapseTwo">
-                   Take the Red Pill (Edit Reality)
-                 </a>
-               </h4>
-             </div>
-             <div id="collapseTwo" class="panel-collapse collapse">
-               <div id="solution-list" class="panel-body">
-                 <div class="list-group">
-                   <a href="#" class="list-group-item active">
-                    <h4 class="list-group-item-heading">
-                       Name of a solution
-                    </h4>
-                    <div class="row">
-                      <div class="col-md-1">
-                        <button type="button" title="Edit" class="btn btn-default btn-lg">
-                          <span class="glyphicon glyphicon-edit"></span>
-                         </button>
-                         <br />
-                        <button type="button" class="btn btn-default btn-lg">
-                          <span class="glyphicon glyphicon-plus"></span>
-                         </button>
-                        <button type="button" class="btn btn-default btn-lg">
-                          <span class="glyphicon glyphicon-trash"></span>
-                         </button>
-                         <br />
-                      </div> <!-- col-md-2 -->
-                      <div class="col-md-6">
-                                                 This is the times that dry men's soles. These are the thymes that spice my bows.
-                      </div> <!-- col-md-6 -->
-                      <div class="col-md-4 bg-warning">
-                          This can't be good.
-                      </div> <!-- col-md-4 -->
-                    </div> <!-- row -->
+                <h4 class="panel-title">
+                   <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapseEdit">
+                      Edit Existing Solutions
                    </a>
-                 </div> <!-- list-group -->
-                 <div class="list-group">
-                   <a href="#" class="list-group-item active">
-                    <h4 class="list-group-item-heading">
-                       Name of another solution
-                    </h4>
-                    <p class="list-group-item-text">...</p>
-                   </a>
-                 </div> <!-- list-group -->
-                 <div class="list-group">
-                   <a href="#" class="list-group-item active">
-                    <h4 class="list-group-item-heading">
-                       Name of yet another solution
-                    </h4>
-                    <p class="list-group-item-text">...</p>
-                   </a>
-                 </div> <!-- list-group -->
-               </div> <!-- panel body -->
-             </div> <!-- panel-collapses collapse -->
-           </div> <!-- panel panel-default -->
-            </div> <!-- panel-group -->
-         </div>
-      </div>
+                </h4>
+             </div> <!-- panel heading -->
+             <div id="collapseEdit" class="panel-collapse collapse">
+                  <div class="panel-inner">
+                     <div class="panel-group" id="inner-accordion">
+                     </div> <!-- class="panel-group id="inner-accordion" -->
+                  </div> <!-- class="panel-inner" -->
+             </div> <!-- panel-collapse -->
+      </div> <!-- panel-group (outer accordiion)-->
    </div> <!-- container (main content) -->
 
 <!-- Bootstrap core JavaScript
