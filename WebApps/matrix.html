@@ -30,71 +30,169 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
-
    <body>
-
    <!-- Modals -->
+
+   <!-- Loaded when the view solutions button is pressed -->
    <div class="modal fade modal-lg" id="viewTheMatrix" tabindex="-1" role="dialog" aria-labelledby="viewTheMatrixLabel" aria-hidden="true">
-       <div class="modal-dialog modal-dlg-lg">
-          <div class="modal-content modal-cont-lg">
-             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="viewTheMatrixLabel">View the Matrix</h4>
-             </div> <!-- modal-footer -->
-         <div class="modal-body">
-            <div class="table-responsive table-modal">
-                <table id="matrixTable" class="table table-bordered">
-                    <tr>
-                    <td>Solution</td>
-                    <td>Type</td>
-                    <td>Availability</td>
-                    <td>Fees</td>
-                    <td>Services Provided</td>
-                    <td>Access Info</td>
-                    </tr>
-                </table>
-            </div> <!-- table-responsive -->
-         </div> <!-- modal-body -->
-         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
-         </div> <!-- modal footer-->
-       </div> <!-- modal content-->
-       </div> <!-- modal dialog -->
+      <div class="modal-dialog modal-dlg-lg">
+         <div class="modal-content modal-cont-lg">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="viewTheMatrixLabel">
+                  View the Matrix
+               </h4>
+            </div> <!-- modal-header -->
+            <div class="modal-body">
+               <div class="table-responsive table-modal">
+                  <table id="matrixTable" class="table table-bordered">
+                     <tr><td>this will be replaced with a table</td></tr>
+                  </table>
+               </div> <!-- table-responsive -->
+            </div> <!-- modal-body -->
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+            </div> <!-- modal footer-->
+         </div> <!-- modal content-->
+      </div> <!-- modal dialog -->
    </div> <!-- modal -->
 
-      <div class="jumbotron">
-         <div class="container">
-            <h1>
-               Red Pill or Blue Pill?<br />
-               <small>
-                  Enter the matrix
-               </small>
-            </h1>
-         </div> <!-- container (jumbotron content) -->
-      </div> <!-- jumbotron -->
+   <!-- Loaded when the 'copy solution button is pressed -->
+   <div class="modal fade" id="solution-copier" tabindex="-1" role="dialog" aria-labelledby="solutionCopierLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Copy Solution</h4>
+         </div>
+         <div class="modal-body">
+
+            <form role="form">
+              <div class="form group">
+                <label for="proposedNewSolutionName">Save Copy As</label>
+                <input type="text" class="form-control" id="proposed-name" placeholder="this should have been replaced">
+              </div>
+            </form>
+         </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+               <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Loaded when the 'delete solution button is pressed -->
+   <div class="modal fade" id="solution-deleter" tabindex="-1" role="dialog" aria-labelledby="solutionDeleterLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Delete Solution</h4>
+         </div>
+         <div class="modal-body">
+
+            <form role="form">
+              <div class="form group">
+                <label for="proposedNewSolutionName">Confirm Delete</label>
+                <input type="text" class="form-control" id="proposed-delete" placeholder="this should have been replaced">
+              </div>
+            </form>
+         </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+               <button type="button" class="btn btn-primary">Delete</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="jumbotron">
       <div class="container">
-         <div class="panel-group" id="accordion">
-           <div class="panel panel-default">
-             <div class="panel-heading">
+         <h1>
+            Red Pill or Blue Pill?<br />
+            <small>
+               Enter the matrix
+            </small>
+         </h1>
+      </div> <!-- container (jumbotron content) -->
+   </div> <!-- jumbotron -->
+
+   <div class="container">
+
+      <div class="panel-group" id="outer-accordion">
+         <div class="panel panel-default"> <!-- 'Blue Pill' (view) -->>
+            <div class="panel-heading">
                <h4 class="panel-title">
-                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                   Take the Blue Pill (Become a Hallway Visitor)
-                 </a>
+                  <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapseView">
+                      Take the Blue Pill (Become a Hallway Visitor)
+                  </a>
                </h4>
-             </div>
-             <div id="collapseOne" class="panel-collapse collapse in">
+            </div> <!-- panel-heading -->
+            <div id="collapseView" class="panel-collapse collapse in">
                <div class="panel-body">
-                <form id="choose-compare" role="form">
-                </form> <!-- form -->
-               <button id="btn-view-matrix" class="btn btn-primary btn-default" data-toggle="modal" data-target="#viewTheMatrix">View</button>
-               </div>
-             </div>
-           </div>
+                  <form id="choose-compare" role="form">
+                  </form> <!-- form -->
+                  <button id="btn-view-matrix" class="btn btn-primary btn-default" data-toggle="modal" data-target="#viewTheMatrix">View</button>
+               </div> <!-- panel-body -->
+             </div> <!-- panel-collapse -->
+             <div class="panel panel-default">
+                <div class="panel-heading">
+                   <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapseEdit">
+                         Edit Existing Solutions
+                      </a>
+                   </h4>
+                </div> <!-- panel heading -->
+            <div id="collapseEdit" class="panel-collapse collapse">
+               <div class="panel-inner">
+                  <div class="panel-group" id="inner-accordion">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#inner-accordion" href="#subCollapseTwo">
+                                 SUB COLLAPSE Two
+                              </a>
+                           </h4>
+                        </div> <!-- panel-heading -->
+                        <div id="subCollapseTwo" class="panel-collapse collapse in">
+                           <div class="panel-body">
+                              Contents of SUB COLLAPSE Two
+                           </div> <!-- panel-body -->
+                        </div> <!-- panel-collapse -->
+                     </div> <!-- panel -->
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#inner-accordion" href="#subCollapseThree">
+                                 SUB COLLAPSE Three
+                              </a>
+                           </h4>
+                        </div> <!-- panel-heading -->
+                        <div id="subCollapseThree" class="panel-collapse collapse in">
+                           <div class="panel-body">
+                              Contents of SUB COLLAPSE Three
+                           </div> <!-- panel-body -->
+                        </div> <!-- panel-collapse -->
+                     </div> <!-- panel -->
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#inner-accordion" href="#subCollapseOne">
+                                 SUB COLLAPSE ONE
+                              </a>
+                           </h4>
+                        </div> <!-- panel-heading -->
+                        <div id="subCollapseOne" class="panel-collapse collapse in">
+                           <div class="panel-body">
+                              Contents of SUB COLLAPSE ONE
+                           </div> <!-- panel-body -->
+                        </div> <!-- panel-collapse -->
+                     </div> <!-- panel -->
            <div class="panel panel-default">
              <div class="panel-heading">
                <h4 class="panel-title">
-                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                   Take the Red Pill
+                 <a data-toggle="collapse" data-parent="#outer-accordion" href="#collapseTwo">
+                   Take the Red Pill (Edit Reality)
                  </a>
                </h4>
              </div>
@@ -147,39 +245,27 @@
                </div> <!-- panel body -->
              </div> <!-- panel-collapses collapse -->
            </div> <!-- panel panel-default -->
-           <div class="panel panel-default">
-             <div class="panel-heading">
-               <h4 class="panel-title">
-                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                   Create a New Acquisition Solution
-                 </a>
-               </h4>
-             </div>
-             <div id="collapseThree" class="panel-collapse collapse">
-               <div class="panel-body">
-                 New, I'm new.
-               </div>
-             </div>
-           </div>
+            </div> <!-- panel-group -->
          </div>
-      </div> <!-- container (main content) -->
+      </div>
+   </div> <!-- container (main content) -->
 
-      <!-- Bootstrap core JavaScript
-      ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-      <script src="js/jquery-1.8.3.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/docs.min.js"></script>
-      <script src="js/catalog.js"></script>
-      <script src="js/vehicles.js"></script>
-      <script src="js/rulesets.js"></script>
-      <script src="js/entities.js"></script>
-      <script src="js/categories.js"></script>
-      <script src="js/solutions.js"></script>
-      <script src="js/matrix.js"></script>
-      <script src="js/sled.js"></script>
-      </body>
-      <footer>
-      </footer>
-      </html>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/docs.min.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/vehicles.js"></script>
+<script src="js/rulesets.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/categories.js"></script>
+<script src="js/solutions.js"></script>
+<script src="js/matrix.js"></script>
+<!-- <script src="js/sled.js"></script> -->
+</body>
+<footer>
+</footer>
+</html>
